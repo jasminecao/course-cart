@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import courses from '../data/courses'
-import { Paper } from '@material-ui/core';
+import { Paper, Icon } from '@material-ui/core';
 import Courses from './Courses.js'
+import CourseItem from './CourseItem.js'
 
 const CourseContainer = () => {
   const [search, setSearch] = useState("");
@@ -31,6 +32,9 @@ const CourseContainer = () => {
     <Paper square={false} elevation={3}>
     <h4>Course List</h4>
     <input className="search" type="text" placeholder="search for a course..." value={search} onChange={handleChange}/>
+      {filtered.map((c) => 
+        (<CourseItem course={c} />)
+      )}
       <Courses courseList={filtered}/>
     </Paper>
     </>
