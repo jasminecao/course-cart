@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import courses from '../data/courses'
-import { ListItem, ListItemText, Paper } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 import Courses from './Courses.js'
 
 const CourseContainer = () => {

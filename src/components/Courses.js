@@ -1,25 +1,38 @@
 import React, {useState} from 'react'
 import courses from '../data/courses'
 import { ListItem, ListItemText, Paper } from '@material-ui/core';
+import { connect } from 'react-redux'
+import { setDescrip } from '../redux/actions'
 
-const Courses = props => {
-  const {courseList} = props
+const mapStateToProps = state => {
+  return state
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setDescrip: (descrip) => dispatch(setDescrip(descrip))
+  }
+}
+
+const Courses = ({ setDescrip, courseList}) => {
+  // const {courseList} = props
   const [selected, setSelected] = useState('');
 
-  const handleClick = (e, id) => {
+  const handleClick = (e, id, c) => {
     setSelected(id);
+    setDescrip(c)
   }
 
   return (
     <>
-    {courseList.map(({ dept, number, title }) => (
+    {courseList.map((c) => (
       <ListItem
         button
-        selected={selected === `${dept}-${number}`}
-        onClick={e => handleClick(e, `${dept}-${number}`)}>
+        selected={selected === `${c.dept}-${c.number}`}
+        onClick={e => handleClick(e, `${c.dept}-${c.number}`, c)}>
         <ListItemText 
-          primary={dept + ' ' + number} 
-          secondary={title}>
+          primary={c.dept + ' ' + c.number} 
+          secondary={c.title}>
         {/* <p key={`${dept}-${number}`}> */}
 
         </ListItemText>
@@ -29,4 +42,4 @@ const Courses = props => {
   )
 }
 
-export default Courses;
+export default connect(mapStateToProps, mapDispatchToProps)(Courses);
