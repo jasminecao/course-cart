@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cart = () => {
+const CourseDescription = () => {
   return (
     <div style={{
       border: '1px solid rgba(0, 0, 0, 0.1)',
@@ -8,11 +8,11 @@ const Cart = () => {
       marginBottom: '1.5rem',
       borderRadius: '4px',
     }}>
-      <h4>Course Cart</h4>
+      <h4>Course Description</h4>
   
-      <p>Your cart is currently empty!</p>
+      <p>Click on a course to learn more</p>
     </div>
   )
 }
 
-export default Cart;
+export default CourseDescription;
