@@ -3,3 +3,43 @@ body {
   background: linear-gradient(175deg, rgba(234,242,236,1) 35%, rgba(198,225,232,1));
   background-attachment: fixed;
 }
+
+h4 {
+  color: #0085A3;
+}
+
+.search {
+  border: 2px solid rgba(198,225,232,1);
+  border-radius: 0.5em;
+  width: 95%;
+  height: 2.5em;
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+}
+
+input {
+  font-family: 'Inter', sans-serif;
+}
+
+.search:focus, .search:hover {
+  box-shadow: rgba(198,225,232,1) 0px 0px 3px;
+  outline: none;
+  border: 2px solid rgba(198,225,232,1);
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #888888;
+}

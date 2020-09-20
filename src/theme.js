@@ -16,19 +16,24 @@ const theme = createMuiTheme({
     ].join(','),
   },
   palette: {
-    // background: { default: '#D3EDF3'},
     primary: {
-      main: '#262938',
+      main: '#0085A3',
     },
   },
   overrides: {
     MuiPaper: {
       root: {
         height: '85vh',
-        padding: '1em 0.5em',
+        padding: '1rem 1.5rem',
         overflowY: 'scroll',
       }
     },
+    MuiButton: {
+      root: {
+        textTransform: 'none',
+        marginTop: '1rem',
+      }
+    }
   },
 })
 

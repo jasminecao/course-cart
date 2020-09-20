@@ -1,14 +1,30 @@
-import { SET_DESCRIP } from '../actionTypes'
+import { SET_DESCRIP, ADD_CART, REMOVE_CART } from '../actionTypes'
 
 const initState = {
-  descrip: {title: ''}
+  descrip: {title: ''},
+  numItems: 0,
+  cartList: []
 };
 
 function rootReducer(state = initState, action) {
   switch (action.type) {
     case SET_DESCRIP: {
-      const newDescrip = action.payload;
-      return Object.assign({}, state, newDescrip)
+      state.descrip = action.descrip;
+      return Object.assign({}, state, action.descrip);
+    }
+    case ADD_CART: {
+      return {
+        ...state,
+        numItems: state.numItems + 1,
+        cartList: [...state.cartList, action.course]
+      }
+    }
+    case REMOVE_CART: {
+      return {
+        ...state,
+        numItems:state.numItems - 1,
+        cartList: state.cartList.filter(item => item !== action.course)
+      }
     }
     default:
       return state;

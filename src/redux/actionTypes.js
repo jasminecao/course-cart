@@ -1,5 +1,3 @@
-// export const ADD_TODO = "ADD_TODO";
-// export const TOGGLE_TODO = "TOGGLE_TODO";
-// export const SET_FILTER = "SET_FILTER";
 export const SET_DESCRIP = "SET_DESCRIP";
 export const ADD_CART = "ADD_CART";
+export const REMOVE_CART = "REMOVE_CART";
